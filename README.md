@@ -1,5 +1,7 @@
 # MagicalLocation
 
+##### forked from [raedev/magical-location-client](https://github.com/raedev/magical-location-client)
+
 Android positioning library provides real-time location information and trajectory recording functions. Positioning is performed as a background service for continuous positioning and has a background keep-alive solution. Application scenarios:
 
 
@@ -15,12 +17,10 @@ The default implementation is Android system positioning. If you need Baidu or A
 ```groovy
 
 repositories {
-    // 仓库地址
     maven { url 'https://maven.raeblog.com/repository/public/' }
 }
 
 dependencies {
-    // 引用库
     implementation 'com.github.raedev:location:1.0.0'
 }
 ```
