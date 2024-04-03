@@ -39,7 +39,7 @@ LocationPermission.requestPermission(context)
 val client = LocationClient(context)
 client.listener = object : LocationListener {
     override fun onLocationChanged(location: Location) {
-        // 位置信息回调（业务处理）
+        // Location information callback (business processing)
     }
 }
 
