@@ -1,11 +1,12 @@
 # MagicalLocation
 
-Android 定位库，提供实时位置信息、轨迹记录功能，定位以后台服务方式进行持续定位并带后台保活方案。应用场景：
+Android positioning library provides real-time location information and trajectory recording functions. Positioning is performed as a background service for continuous positioning and has a background keep-alive solution. Application scenarios:
 
-- 地图类APP，需要在任何代码位置中获取GPS位置信息，或者GPS定位图层。
-- 运动类APP，需要实时更新当前位置信息以及后台轨迹记录的。
 
-默认实现为Android系统定位，若需要百度或者高德地图实现可以自行实现`BaseLocationRequest`。
+- Map APP needs to obtain GPS location information or GPS positioning layer in any code location.
+- Sports apps need to update current location information and background track records in real time.
+
+The default implementation is Android system positioning. If you need Baidu or Amap to implement it, you can implement `BaseLocationRequest` yourself.
 
 ![arch](architecture.drawio.png)
 
@@ -24,17 +25,17 @@ dependencies {
 }
 ```
 
-## 使用
+## use
 
-更多调用方式请查看`MainActivity.kt`示例。
+For more calling methods, please see the `MainActivity.kt` example.
 
 ```kotlin
 
-// TODO：请自行先获取定位权限后再调用LocationClient，否则后面的服务都不可用。
+// TODO: Please obtain the location permission before calling LocationClient, otherwise all subsequent services will not be available.
 val context: Activity = this
 LocationPermission.requestPermission(context)
 
-// 初始化位置客户端
+//Initialize location client
 val client = LocationClient(context)
 client.listener = object : LocationListener {
     override fun onLocationChanged(location: Location) {
@@ -42,16 +43,19 @@ client.listener = object : LocationListener {
     }
 }
 
-// 开始监听位置信息
+
+// Start monitoring location information
 client.start()
 
-// 获取最后一次位置信息
+// Get the last location information
 val location = MagicalLocationManager.getLastLocation(context)
 
-// 停止位置监听
+
+// Stop location monitoring
 client.stop()
 
-// 释放后台服务
+
+// Release background service
 client.destroy()
 
 ```
