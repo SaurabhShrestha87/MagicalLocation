@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="gm_location_permission_denied">No location permission, please authorize access first.</string>
+    <string name="gm_location_provider_not_found">No suitable location provider found</string>
+    <string name="gm_location_disable">Please turn on the GPS location switch first</string>
+    <string name="gm_location_service_name">location services</string>
+    <string name="gm_location_channel_name">位置信息通知</string>
+    <string name="gm_location_channel_description">Location information notification</string>
+    <string name="gm_location_notification_title">location notification</string>
+    <string name="gm_location_notification_desc">Using location in the background</string>
+</resources>

@@ -1,0 +1,47 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'com.github.raedev.maven'
+}
+
+android {
+    namespace 'com.magical.location'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 33
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    // Room数据库
+    def room = '2.4.3'
+    implementation("androidx.room:room-runtime:$room")
+    kapt("androidx.room:room-compiler:$room")
+}
+
+// Maven上传配置
+mavenPublishing {
+    name = "com.github.raedev:location:1.0.2"
+    pomUrl = "https://github.com/raedev/magical-location-client"
+    pomName = "rae"
+    pomEmail = "raedev@qq.com"
+}
